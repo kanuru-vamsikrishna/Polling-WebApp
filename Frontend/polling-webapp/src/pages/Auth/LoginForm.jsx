@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import AuthLayout from '../../components/Layout/AuthLayout'
 import AuthInput from '../../components/input/AuthInput'
+import { Link } from 'react-router-dom'
+import { validateEmail } from '../../utils/helper'
 
 const LoginForm = () => {
 
@@ -8,7 +10,21 @@ const LoginForm = () => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState(null)
 
-  const handleSubmit = () => {}
+  const handleSubmit = async () => {
+    // e.preventDefault();
+
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address")
+      return;
+    }
+
+    if (!password) {
+      setError("Please enter the password")
+      return;
+    }
+
+    setError("")
+  }
 
   return (
     <AuthLayout>
@@ -23,6 +39,21 @@ const LoginForm = () => {
             placeholder="abc@example.com"
             type="text"
           />
+          <AuthInput
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            label="Password"
+            placeholder="Min 8 characters"
+            type="password"
+          />
+
+          {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
+          <button type="submit" className="btn-primary">LOGIN</button>
+          <p className="text-[13px] text-slate-800 mt-3">Don't have an account?{" "}
+            <Link className="font-medium text-blue-400 underline" to="/signup">
+              SignUp
+            </Link>
+          </p>
         </form>
     </div>
     </AuthLayout>

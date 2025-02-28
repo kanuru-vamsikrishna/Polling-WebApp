@@ -11,6 +11,10 @@ const AuthInput = (props) => {
 
   const [showPassword, setShowPassword] = useState(false)
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword)
+  }
+
   return (
     <div>
       <label className="text-[13px] text-slate-800">{label}</label>
@@ -24,6 +28,15 @@ const AuthInput = (props) => {
           value={value}
           onChange={(e) => onChange(e)}
         />
+        {type === "password" && (
+          <div>
+            {showPassword ? (
+            <i className="bi bi-eye text-blue-400 cursor-pointer" onClick={() => toggleShowPassword()} style={{ fontSize: "25px" }}></i>
+            ) : (
+              <i className="bi bi-eye-slash text-slate-400 cursor-pointer" onClick={() => toggleShowPassword()} style={{ fontSize: "25px" }}></i>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )

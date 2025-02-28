@@ -1,4 +1,5 @@
 import React from 'react'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import LoginForm from './pages/Auth/LoginForm';
 import Home from './pages/Dashboard/Home';
