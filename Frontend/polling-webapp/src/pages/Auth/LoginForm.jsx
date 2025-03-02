@@ -10,8 +10,8 @@ const LoginForm = () => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState(null)
 
-  const handleSubmit = async () => {
-    // e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     if (!validateEmail(email)) {
       setError("Please enter a valid email address")
@@ -48,9 +48,9 @@ const LoginForm = () => {
           />
 
           {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
-          <button type="submit" className="btn-primary">LOGIN</button>
+          <button type="submit" className="btn-primary cursor-pointer">LOGIN</button>
           <p className="text-[13px] text-slate-800 mt-3">Don't have an account?{" "}
-            <Link className="font-medium text-blue-400 underline" to="/signup">
+            <Link className="font-medium text-blue-400 underline" to="/sign-up">
               SignUp
             </Link>
           </p>
