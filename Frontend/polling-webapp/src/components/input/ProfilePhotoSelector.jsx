@@ -48,7 +48,7 @@ const ProfilePhotoSelector = ({ image, setImage }) => {
           alt="Profile Photo"
           className="w-20 h-20 rounded-full object-cover"
         />
-        <button type="button" className="w-8 h-8 items-center justify-center bg-blue-600 text-white rounded-full absolute -bottom-1 -right-1" onClick={handleRemoveImage}>
+        <button type="button" className="w-8 h-8 items-center justify-center bg-red-500 text-white rounded-full absolute -bottom-1 -right-1" onClick={handleRemoveImage}>
         <i className="bi bi-trash"></i>
         </button>
       </div>

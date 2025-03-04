@@ -28,7 +28,8 @@ const SignUpForm = () => {
       </div>
 
       <form onSubmit={handleSubmit}>
-       <ProfilePhotoSelector image={profilePic} setImage={setProfilePic}  />
+        <ProfilePhotoSelector image={profilePic} setImage={setProfilePic} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
        <AuthInput
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
@@ -56,7 +57,8 @@ const SignUpForm = () => {
           label="Password"
           placeholder="Min 8 characters"
           type="password"
-        />
+          />
+          </div>
       </form>
     </AuthLayout>
   )
