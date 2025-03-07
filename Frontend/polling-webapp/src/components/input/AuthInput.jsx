@@ -31,9 +31,9 @@ const AuthInput = (props) => {
         {type === "password" && (
           <div>
             {showPassword ? (
-            <i className="bi bi-eye text-blue-400 cursor-pointer" onClick={() => toggleShowPassword()} style={{ fontSize: "25px" }}></i>
+            <i className="bi bi-eye text-blue-400 cursor-pointer" onClick={() => toggleShowPassword()} style={{ fontSize: "17px" }}></i>
             ) : (
-              <i className="bi bi-eye-slash text-slate-400 cursor-pointer" onClick={() => toggleShowPassword()} style={{ fontSize: "25px" }}></i>
+              <i className="bi bi-eye-slash text-slate-400 cursor-pointer" onClick={() => toggleShowPassword()} style={{ fontSize: "17      px" }}></i>
             )}
           </div>
         )}

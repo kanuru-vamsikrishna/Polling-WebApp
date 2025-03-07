@@ -33,11 +33,12 @@ const ProfilePhotoSelector = ({ image, setImage }) => {
         accept="image/*"
         ref={inputRef}
         onChange={handleImageChange}
+        hidden
       />
       {!image ? (
        <div className="w-20 h-20 flex items-center justify-center bg-sky-100 rounded-full relative">
        <i className="bi bi-person text-4xl text-blue-400"></i>
-       <button type="button" className="w-8 h-8 items-center justify-center bg-blue-600 text-white rounded-full absolute -bottom-1 -right-1" onClick={onChooseFile}>
+       <button type="button" className="w-8 h-8 items-center justify-center bg-blue-600 text-white rounded-full absolute -bottom-1 -right-1 cursor-pointer" onClick={onChooseFile}>
        <i className="bi bi-upload"></i>
          </button>
        </div>
@@ -48,7 +49,7 @@ const ProfilePhotoSelector = ({ image, setImage }) => {
           alt="Profile Photo"
           className="w-20 h-20 rounded-full object-cover"
         />
-        <button type="button" className="w-8 h-8 items-center justify-center bg-red-500 text-white rounded-full absolute -bottom-1 -right-1" onClick={handleRemoveImage}>
+        <button type="button" className="w-8 h-8 items-center justify-center bg-red-500 text-white rounded-full absolute -bottom-1 -right-1 cursor-pointer" onClick={handleRemoveImage}>
         <i className="bi bi-trash"></i>
         </button>
       </div>
