@@ -8,6 +8,7 @@ import CreatePoll from './pages/Dashboard/CreatePoll';
 import VotedPolls from './pages/Dashboard/VotedPolls';
 import MyPolls from './pages/Dashboard/MyPolls';
 import Bookmarks from './pages/Dashboard/Bookmarks';
+import UserProvider from './context/UserContext';
 
 // Takes care of the login whether based on localstorage is present or not.
 const Root = () => {
@@ -22,6 +23,7 @@ const Root = () => {
 const App = () => {
   return (
     <div>
+      <UserProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Root />} />
@@ -33,7 +35,8 @@ const App = () => {
           <Route path="/my-polls" exact element={<MyPolls />} />
           <Route path="/bookmarks" exact element={<Bookmarks />} />
         </Routes>
-      </Router>
+        </Router>
+        </UserProvider>
    </div>
   )
 }
