@@ -45,7 +45,7 @@ const SignUpForm = () => {
     // Signup API.
     try {
       // Upload image if present
-      let profileImageUrl
+      let profileImageUrl = ""
       if (profilePic) {
         const imageUploadRes = await uploadImage(profilePic);
         profileImageUrl = imageUploadRes.imageUrl || ""
