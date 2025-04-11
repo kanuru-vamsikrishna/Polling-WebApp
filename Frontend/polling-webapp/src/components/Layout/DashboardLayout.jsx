@@ -5,10 +5,10 @@ import SideMenu from "./SideMenu"
 const DashboardLayout = ({ children, activeMenu }) => {
   return (
     <div>
-      <div className="max-[1080px]: hidden">
+      <Navbar />
+      <div>
         <SideMenu activeMenu={activeMenu} />
       </div>
-      <Navbar />
       {children}
     </div>
   )
